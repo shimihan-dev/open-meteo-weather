@@ -27,7 +27,8 @@ export const countries: Country[] = [
       { name: "오사카", latitude: 34.6937, longitude: 135.5023 },
       { name: "나고야", latitude: 35.1815, longitude: 136.9066 },
       { name: "삿포로", latitude: 43.0618, longitude: 141.3545 },
-      { name: "후쿠오카", latitude: 33.5902, longitude: 130.4017 }
+      { name: "후쿠오카", latitude: 33.5902, longitude: 130.4017 },
+      { name: "오키나와", latitude: 26.5019, longitude: 127.9454 }
     ]
   },
   {
