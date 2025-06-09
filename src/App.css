@@ -14,17 +14,17 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  color: white;
+  color: #2c3e50;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #3498db;
 }
 
 @keyframes App-logo-spin {
@@ -54,12 +54,13 @@
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #2c3e50;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .search-box input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: #95a5a6;
 }
 
 .search-box button {
@@ -67,26 +68,28 @@
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  background-color: #61dafb;
-  color: #282c34;
+  background-color: #3498db;
+  color: white;
   cursor: pointer;
   transition: background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .search-box button:hover {
-  background-color: #4fa8c7;
+  background-color: #2980b9;
 }
 
 .search-box button:disabled {
-  background-color: #cccccc;
+  background-color: #bdc3c7;
   cursor: not-allowed;
 }
 
 .location-list {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 5px;
   max-height: 300px;
   overflow-y: auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .location-item {
@@ -95,23 +98,26 @@
   transition: background-color 0.3s;
   text-align: left;
   font-size: 16px;
+  color: #2c3e50;
 }
 
 .location-item:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(52, 152, 219, 0.1);
 }
 
 .weather-display {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
   min-width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .weather-info {
   text-align: left;
   font-size: 18px;
+  color: #2c3e50;
 }
 
 .weather-info p {
@@ -119,7 +125,7 @@
 }
 
 .error {
-  color: #ff6b6b;
+  color: #e74c3c;
   margin: 10px 0;
   font-size: 16px;
 }
@@ -136,14 +142,15 @@
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #2c3e50;
   cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .country-select option {
-  background-color: #282c34;
-  color: white;
+  background-color: white;
+  color: #2c3e50;
 }
 
 .country-weather {
@@ -160,16 +167,17 @@
 }
 
 .weather-card {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   padding: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .weather-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .weather-card-header {
@@ -181,7 +189,7 @@
 
 .weather-card h3 {
   margin: 0;
-  color: #61dafb;
+  color: #3498db;
   font-size: 1.5em;
 }
 
@@ -194,29 +202,30 @@
 .weather-info {
   text-align: left;
   font-size: 16px;
+  color: #2c3e50;
 }
 
 .weather-description {
   font-size: 1.2em;
-  color: #61dafb;
+  color: #3498db;
   margin-bottom: 10px;
 }
 
 .temperature {
   font-size: 2em;
   margin: 10px 0;
-  color: #fff;
+  color: #2c3e50;
 }
 
 .feels-like {
   font-size: 0.5em;
-  color: #aaa;
+  color: #7f8c8d;
   margin-left: 10px;
 }
 
 .weather-info p {
   margin: 8px 0;
-  color: #ddd;
+  color: #2c3e50;
 }
 
 .local-time {
@@ -235,18 +244,18 @@
 
 .update-time {
   font-size: 0.8em;
-  color: #888;
+  color: #7f8c8d;
   margin-top: 5px;
 }
 
 .loading {
   margin: 20px 0;
   font-size: 18px;
-  color: #61dafb;
+  color: #3498db;
 }
 
 .error {
-  color: #ff6b6b;
+  color: #e74c3c;
   margin: 20px 0;
   font-size: 16px;
 }
@@ -269,7 +278,7 @@
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(44, 62, 80, 0.9);
   color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
@@ -278,6 +287,7 @@
   flex-direction: column;
   align-items: flex-end;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .version-info span {
@@ -285,6 +295,6 @@
 }
 
 .build-date {
-  color: #aaa;
+  color: #bdc3c7;
   font-size: 0.9em;
 }
