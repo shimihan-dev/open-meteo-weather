@@ -17,7 +17,8 @@ export const countries: Country[] = [
       { name: "부산", latitude: 35.1796, longitude: 129.0756 },
       { name: "인천", latitude: 37.4563, longitude: 126.7052 },
       { name: "대구", latitude: 35.8714, longitude: 128.6014 },
-      { name: "대전", latitude: 36.3504, longitude: 127.3845 }
+      { name: "대전", latitude: 36.3504, longitude: 127.3845 },
+      { name: "광주", latitude: 35.166668, longitude: 126.916664 }
     ]
   },
   {
