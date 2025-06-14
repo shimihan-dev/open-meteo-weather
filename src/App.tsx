@@ -3,11 +3,9 @@ import './App.css';
 import WeatherDisplay from './components/WeatherDisplay';
 import VersionInfo from './components/VersionInfo';
 import { countries, City } from './data/cities';
-import CityCard from './components/CityCard';
-import FavoriteCities from './components/FavoriteCities';
 
 function App() {
-  const [activeTab, setActiveTab] = useState<'all' | 'favorites'>('all');
+  const [selectedCountry, setSelectedCountry] = useState<string>('');
 
   // 모든 도시 데이터를 하나의 배열로 합치기
   const allCities = countries.reduce<City[]>((acc, country) => {
@@ -21,55 +19,34 @@ function App() {
   const selectedCountryData = countries.find(country => country.name === selectedCountry);
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <nav className="bg-white shadow-md">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center h-16">
-            <h1 className="text-xl font-bold">날씨 정보</h1>
-            <div className="flex space-x-4">
-              <button
-                onClick={() => setActiveTab('all')}
-                className={`px-4 py-2 rounded ${
-                  activeTab === 'all'
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-gray-200 text-gray-700'
-                }`}
-              >
-                전체 도시
-              </button>
-              <button
-                onClick={() => setActiveTab('favorites')}
-                className={`px-4 py-2 rounded ${
-                  activeTab === 'favorites'
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-gray-200 text-gray-700'
-                }`}
-              >
-                즐겨찾기
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <main className="container mx-auto p-4">
-        {activeTab === 'all' ? (
-          <div>
+    <div className="App">
+      <header className="App-header">
+        <h1>전 세계 날씨 정보</h1>
+        
+        <div className="country-selector">
+          <select 
+            value={selectedCountry} 
+            onChange={handleCountryChange}
+            className="country-select"
+          >
+            <option value="">국가를 선택하세요</option>
             {countries.map((country) => (
-              <div key={country.name} className="mb-8">
-                <h2 className="text-2xl font-bold mb-4">{country.name}</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {country.cities.map((city) => (
-                    <CityCard key={city.name} city={city} />
-                  ))}
-                </div>
-              </div>
+              <option key={country.name} value={country.name}>
+                {country.name}
+              </option>
             ))}
+          </select>
+        </div>
+
+        {selectedCountryData && (
+          <div className="country-weather">
+            <h2>{selectedCountryData.name} 주요 도시 날씨</h2>
+            <WeatherDisplay 
+              cities={selectedCountryData.cities}
+            />
           </div>
-        ) : (
-          <FavoriteCities />
         )}
-      </main>
+      </header>
       <VersionInfo />
     </div>
   );
