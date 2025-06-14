@@ -1,12 +1,4 @@
-interface WeatherData {
-  temperature: number;
-  weathercode: number;
-  windspeed: number;
-  time: string;
-  humidity: number;
-  precipitation: number;
-  feels_like: number;
-}
+import { WeatherData } from '../types/weather';
 
 interface LocationData {
   latitude: number;
@@ -35,7 +27,7 @@ export const searchLocation = async (cityName: string): Promise<LocationData[]> 
 
 export const getWeather = async (latitude: number, longitude: number): Promise<WeatherData> => {
   const response = await fetch(
-    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weathercode,windspeed_10m,relativehumidity_2m,precipitation,apparent_temperature&timezone=auto`
+    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weathercode,windspeed_10m,relativehumidity_2m,precipitation,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`
   );
   
   if (!response.ok) {
@@ -44,13 +36,18 @@ export const getWeather = async (latitude: number, longitude: number): Promise<W
 
   const data = await response.json();
   return {
-    temperature: data.current.temperature_2m,
-    weathercode: data.current.weathercode,
-    windspeed: data.current.windspeed_10m,
-    time: data.current.time,
-    humidity: data.current.relativehumidity_2m,
-    precipitation: data.current.precipitation,
-    feels_like: data.current.apparent_temperature
+    current: {
+      temperature_2m: data.current.temperature_2m,
+      relative_humidity_2m: data.current.relativehumidity_2m,
+      wind_speed_10m: data.current.windspeed_10m,
+      weather_code: data.current.weathercode
+    },
+    daily: {
+      time: data.daily.time,
+      temperature_2m_max: data.daily.temperature_2m_max,
+      temperature_2m_min: data.daily.temperature_2m_min,
+      weather_code: data.daily.weathercode
+    }
   };
 };
 
