@@ -114,7 +114,13 @@ export const countries: Country[] = [
       { name: "시카고", latitude: 41.8781, longitude: -87.6298 },
       { name: "휴스턴", latitude: 29.7604, longitude: -95.3698 },
       { name: "마이애미", latitude: 25.7617, longitude: -80.1918 },
-      { name: "솔트레이크시티", latitude: 40.7608, longitude: -111.8910 }
+      { name: "솔트레이크시티", latitude: 40.7608, longitude: -111.8910 },
+      { name: "시애틀", latitude: 47.6062, longitude: -122.3321 },
+      { name: "라스베가스", latitude: 36.1699, longitude: -115.1398 },
+      { name: "보스턴", latitude: 42.3601, longitude: -71.0589 },
+      { name: "댈러스", latitude: 32.7767, longitude: -96.7970 },
+      { name: "앵커리지", latitude: 61.2181, longitude: -149.9003 },
+      { name: "호놀룰루", latitude: 21.3069, longitude: -157.8583 }
     ]
   },
   {
