@@ -8,7 +8,7 @@ export const fetchSubwaySchedule = async (
   weekTag: 1 | 2 | 3, // 1: 평일, 2: 토요일, 3: 일요일/공휴일
   updnTag: 1 | 2 // 1: 상행, 2: 하행
 ): Promise<SubwayTimeTableItem[]> => {
-  const url = `${BASE_URL}/${stationCode}/${weekTag}/${updnTag}/`;
+  const url = `/api/subway?stationCode=${stationCode}&weekTag=${weekTag}&updnTag=${updnTag}`;
 
   try {
     const response = await fetch(url);
