@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 export default async function handler(req, res) {
   const { stationCode, weekTag, updnTag } = req.query;
   if (!stationCode || !weekTag || !updnTag) {
